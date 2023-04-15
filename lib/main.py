@@ -29,23 +29,44 @@ def remove_all():
 # Create table
 db.create_tables([Note])
 
-new_note = Note(title='Test', body='Testing of db connection')
-new_note.save()
-
 # List all notes
 def list_all():
     list_all = Note.select()
     print([[note.title, note.body] for note in list_all])
 
 # List one note based off title
+def get_single_note():
+    search_title = input('What is the title of the note youre looking for? ')
+    get_one = Note.get(title=search_title)
+    print(get_one.body)
 
 # Create new note
 def create_new():
     title = input('What is the title? ')
     body = input('What is your note? ')
-    full_note = Note(title=title, body=body)
-    full_note.save()
+    new_note = Note(title=title, body=body)
+    new_note.save()
 
 # Remove note based off title
 
 # Update note based off title
+
+# Create conditional to prompt user for options
+def options():
+    print("Welcome to your terminal note taking app.\n Please choose from the following options: \n 1: List all notes \n 2: Find Note based off Title \n 3: Create new Note \n 4: Delete ALL Notes")
+    selection = input('Please insert selection: ')
+    if selection == '1':
+        list_all()
+    elif selection == '2':
+        get_single_note()
+    elif selection == '3':
+        create_new()
+        print('New note created.')
+    elif selection == '4':
+        remove_all()
+        print('All notes deleted!')
+    else:
+        print('Sorry that is an incorrect selction. Please type the number representing the thing you would like to do')
+        options()
+
+options()
