@@ -17,8 +17,8 @@ able to see a list of their notes and select and view a specific note.
 
 ## Setup
 
-Before you get started, create a new database called `carmen` and load the
-provided data in `world.sql`:
+Before you get started, create a new database called `notes` and load the
+provided data in `notes.sql`:
 
 ```sh
 # Enter psql:
