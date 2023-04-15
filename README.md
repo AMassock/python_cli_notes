@@ -33,6 +33,7 @@ CREATE DATABASE notes;
 # Load note.sql:
 \i path/to/notes.sql
 # (replace /path/to/notes.sql with the actual path to the file)
+# ex. /Documents/sandbox/cython_cli_notes/lib/notes.sql
 ```
 
 ## Bonus
