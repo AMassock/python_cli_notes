@@ -29,10 +29,22 @@ def remove_all():
 # Create table
 db.create_tables([Note])
 
+def repeat():
+    reload = input("Would you like to continue? Y/N \n")
+    if reload == 'Y':
+        options()
+    else:
+        exit()
+
 # List all notes
 def list_all():
     list_all = Note.select()
-    print([[note.title, note.body] for note in list_all])
+    # print([[note.title, note.body] for note in list_all])
+    for note in list_all:
+        title = note.title
+        body = note.body
+        print(f"Title: {title}")
+        print(f"Body: {body}")
 
 # List one note based off title
 def get_single_note():
@@ -57,14 +69,18 @@ def options():
     selection = input('Please insert selection: ')
     if selection == '1':
         list_all()
+        repeat()
     elif selection == '2':
         get_single_note()
+        repeat()
     elif selection == '3':
         create_new()
         print('New note created.')
+        repeat()
     elif selection == '4':
         remove_all()
         print('All notes deleted!')
+        repeat()
     else:
         print('Sorry that is an incorrect selction. Please type the number representing the thing you would like to do')
         options()
