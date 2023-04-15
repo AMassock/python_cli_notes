@@ -27,7 +27,7 @@ psql
 # Create database:
 CREATE DATABASE notes;
 
-# Connect to carmen:
+# Connect to notes:
 \c notes
 
 # Load note.sql:
