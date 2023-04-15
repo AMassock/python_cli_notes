@@ -13,7 +13,9 @@ able to see a list of their notes and select and view a specific note.
 
 1.  Clone this repository.
 1.  (Optional) Set up the SQL database for this exercise (instructions below).
-1.  Change into directory created from clone
+1.  Change into directory created from clone.
+1.  Follow setup instructions below.
+1.  Run `python3 main.py`
 
 ## Setup
 
