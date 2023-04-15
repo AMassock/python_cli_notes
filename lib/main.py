@@ -29,9 +29,10 @@ def remove_all():
 # Create table
 db.create_tables([Note])
 
+# 
 def repeat():
-    reload = input("Would you like to continue? Y/N \n")
-    if reload == 'Y':
+    reload = input("Would you like to continue? Y/N \n").lower()
+    if reload == 'y':
         options()
     else:
         exit()
@@ -39,7 +40,6 @@ def repeat():
 # List all notes
 def list_all():
     list_all = Note.select()
-    # print([[note.title, note.body] for note in list_all])
     for note in list_all:
         title = note.title
         body = note.body
@@ -48,14 +48,14 @@ def list_all():
 
 # List one note based off title
 def get_single_note():
-    search_title = input('What is the title of the note youre looking for? ')
+    search_title = input('What is the title of the note youre looking for? \n')
     get_one = Note.get(title=search_title)
     print(get_one.body)
 
 # Create new note
 def create_new():
-    title = input('What is the title? ')
-    body = input('What is your note? ')
+    title = input('What is the title? \n')
+    body = input('What is your note? \n')
     new_note = Note(title=title, body=body)
     new_note.save()
 
